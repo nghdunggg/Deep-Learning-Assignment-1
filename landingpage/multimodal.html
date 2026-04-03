@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Multimodal Classification | Food-101</title>
+</head>
+<body>
+    <header>
+        <h1>Multimodal Classification Report</h1>
+        <p>Image-Text Fusion using OpenAI CLIP</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="text.html">Text Analysis</a>
+        <a href="image.html">Image Classification</a>
+        <a href="multimodal.html">Multimodal</a>
+    </nav>
+
+    <div class="container">
+        <section class="card">
+            <h2>Methodology</h2>
+            <p>Our approach utilizes the <strong>ViT-B/32</strong> CLIP backbone to extract features from both images and their corresponding text descriptions. We tested three distinct scenarios:</p>
+            <ol>
+                <li><strong>Zero-Shot:</strong> Direct prediction without any training.</li>
+                <li><strong>Few-Shot (k=5):</strong> Training with only 5 samples per class (505 total samples).</li>
+                <li><strong>Full Training:</strong> Fine-tuning on the entire dataset (67,988 samples).</li>
+            </ol>
+        </section>
+
+        <section class="card">
+            <h2>Performance Comparison</h2>
+            <p>The following table summarizes the test accuracy achieved across the three scenarios:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Sample Size</th>
+                        <th>Epochs</th>
+                        <th>Accuracy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Zero-Shot</td>
+                        <td>0</td>
+                        <td>-</td>
+                        <td>59.08%</td>
+                    </tr>
+                    <tr>
+                        <td>Few-Shot (k=5)</td>
+                        <td>505</td>
+                        <td>30</td>
+                        <td>82.85%</td>
+                    </tr>
+                    <tr style="background-color: #e6f1ff; font-weight: bold;">
+                        <td>Full Training</td>
+                        <td>67,988</td>
+                        <td>20</td>
+                        <td>91.02%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Training Configuration</h2>
+            <ul>
+                <li><strong>Optimizer:</strong> Adam</li>
+                <li><strong>Learning Rate:</strong> 1e-3</li>
+                <li><strong>Weight Decay:</strong> 1e-4 (L2 Regularization)</li>
+                <li><strong>Batch Size:</strong> 256 for full train / 32 for few-shot</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: #777;">
+        © 2026 Nguyễn Hoàng Dung - 2252109 - HCMUT
+    </footer>
+</body>
+</html>

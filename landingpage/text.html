@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Text Analysis | DBpedia EDA</title>
+</head>
+<body>
+    <header>
+        <h1>Text Classification Report</h1>
+        <p>Exploratory Data Analysis of DBpedia14 Dataset</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="text.html">Text Analysis</a>
+        <a href="image.html">Image Classification</a>
+        <a href="multimodal.html">Multimodal</a>
+    </nav>
+
+    <div class="container">
+        <section class="card">
+            <h2>Dataset Overview</h2>
+            <p>The <strong>DBpedia14</strong> dataset is a collection of Wikipedia entities categorized into 14 distinct classes.</p>
+            <ul>
+                <li><strong>Training Samples:</strong> 560,000</li>
+                <li><strong>Test Samples:</strong> 70,000</li>
+                <li><strong>Features:</strong> <code>label</code>, <code>title</code>, <code>content</code></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Class Distribution</h2>
+            <p>The dataset is perfectly balanced, with exactly <strong>40,000 training samples per class</strong>. The 14 classes include:</p>
+            <p style="font-size: 0.9em; color: #555;">
+                Company, EducationalInstitution, Artist, Athlete, OfficeHolder, MeanOfTransportation, Building, NaturalPlace, Village, Animal, Plant, Album, Film, WrittenWork.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Text Length Analysis</h2>
+            <p>We analyzed the word count distribution of the 'content' field to understand text complexity:</p>
+            <table>
+                <tr><th>Metric</th><th>Word Count</th></tr>
+                <tr><td>Mean Length</td><td>~46 words</td></tr>
+                <tr><td>Median (50%)</td><td>46 words</td></tr>
+                <tr><td>Maximum Length</td><td>1,484 words</td></tr>
+                <tr><td>Standard Deviation</td><td>22.46</td></tr>
+            </table>
+            <p>Most descriptions are concise, falling within the 27 to 65-word range (25th to 75th percentiles).</p>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: #777;">
+        © 2026 Nguyễn Hoàng Dung - 2252109 - HCMUT
+    </footer>
+</body>
+</html>
